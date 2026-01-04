@@ -1,0 +1,7 @@
+[project]
+name="pyRetaining"
+version="2026.0.0"
+dependencies=[
+    "sympy",
+    "numpy"
+]

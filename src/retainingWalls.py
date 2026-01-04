@@ -1,8 +1,5 @@
 import numpy as np
-''' Amendments '''
-'''
-19/2/24 Top shear and top moments included within the analysis of retaining walls
-'''
+
 class earth():
     ''' class to module soil properties '''
     def __init__(self,psi, phi, delta, beta, gs):
