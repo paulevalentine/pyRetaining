@@ -1,14 +1,27 @@
 import numpy as np
-
+import sympy as sp
 class earth():
-    ''' class to module soil properties '''
-    def __init__(self,psi, phi, delta, beta, gs):
-	    # convert the angles to radians
+    """
+    Constructor for the earth class.
+
+    Parameters:
+    - psi (float): angle of the back of the retaining wall in degrees
+    - phi (float): internal angle of friction for the soil in degrees
+    - delta (float): angle of wall friction in degrees
+    - beta (float): angle of the retained slope in degrees
+    - gs (float): bulk unit weight of the soil in kN/m^3
+    """
+    def __init__(self, psi: float, phi: float, delta: float, beta: float, gs:float):
+
+        # covert angle to radians
         self.psi = np.radians(psi)
         self.phi = np.radians(phi)
         self.delta = np.radians(delta)
         self.beta = np.radians(beta)
-        self.gs = gs
+
+        self.gs = g
+
+        # components to calculate raking pressure coefficients
         a = (1/np.sin(self.psi)) * np.sin(self.psi - self.phi)
         b = np.sqrt(np.sin(self.psi + self.delta))
         c = np.sqrt((np.sin(self.phi+self.delta)*np.sin(self.phi-self.beta))/np.sin(self.psi - self.beta))
